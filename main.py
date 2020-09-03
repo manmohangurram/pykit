@@ -61,6 +61,6 @@ if __name__ == "__main__":
         if choice == '1': s.google_search()
         else: s.bing_search()
     else:
-        print(' ')
+        print('')
 
 
