@@ -54,7 +54,7 @@ class Conveter:
         querystring = {"q":quantity,"from":initial,"to":to}
         headers = {
         'x-rapidapi-host': "currency-exchange.p.rapidapi.com",
-        'x-rapidapi-key': "789d22491amsh9cf6fe5ac3b3cf8p195e80jsn0b807e6d418c"
+        'x-rapidapi-key': "api-id"
         }
         response = requests.request("GET", url, headers=headers, params=querystring)
         print(response.text)
