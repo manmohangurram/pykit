@@ -1,6 +1,6 @@
-from currency_coverter import Conveter
-from search import search_engines
-from youtube_download import downloader
+from Modules.currency_coverter import Conveter
+from Modules.search import search_engines
+from Modules.youtube_download import downloader
 import os
 
 def clear():
@@ -38,15 +38,17 @@ if __name__ == "__main__":
             banner()
             print("1.Converter")
             print("2.Country Codes")
+            print("99.Back Menu")
             choice = input("Select an Option:")
             if choice=='1':
                 Conveter.get_data()
-            else:
+            elif choice=='2':
                 Conveter.print_currency_codes()
+            else: pass
         elif choice=='3':
             clear()
             banner()
-            print("1.Vedio Downloader\n2.Audio Downloader")
+            print("1.Vedio Downloader\n2.Audio Downloader\n99.Back Menu")
             choice = input("Select an Option:")
             url = input('Enter Vedio URL : ')
             location = input('Enter prefered Location (default = /home/mohan/Download/) : ') or "Downloads"
@@ -54,8 +56,9 @@ if __name__ == "__main__":
                 resolution = input('Enter prefered Format (default = 720 ) : ') or "720"
                 d = downloader(url,resolution,location)
                 d.vedio_download()
-            else:
+            elif choice=='2':
                 resolution = input('Enter prefered Format (default = mp3 ) : ') or "mp3"
                 d = downloader(url,resolution,location)
                 d.audio_download()
+            else:pass
         else: break
