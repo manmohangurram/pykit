@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import time
 
 class search_engines:
 
@@ -22,7 +23,7 @@ class search_engines:
                 print('\n'+self.HEADER+title.text+self.ENDC)
                 print(self.UNDERLINE+link.find('a',href=True).get('href')+self.ENDC)
                 print(text.text)
-        return ;
+        time.sleep(5)
 
     def bing_search(self):
         url = "https://www.bing.com/search?q="+"+".join(self.search.split())+"&count="+self.num
@@ -33,4 +34,4 @@ class search_engines:
             for title in web_link.find('h2'):
                 print('\n'+self.HEADER+title.text+self.ENDC)
                 print(self.UNDERLINE+title.get('href')+self.ENDC)
-        return ;
+        time.sleep(5)

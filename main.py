@@ -33,7 +33,7 @@ if __name__ == "__main__":
             choice = input('Selet prefered search engine : ')
             if choice == '1': s.google_search()
             else: s.bing_search()
-        if choice=='2':
+        elif choice=='2':
             clear()
             banner()
             print("1.Converter")

@@ -1,4 +1,5 @@
 import requests
+import time
 
 quantity,initial,to = '','',''
 
@@ -54,7 +55,8 @@ class Conveter:
         querystring = {"q":quantity,"from":initial,"to":to}
         headers = {
         'x-rapidapi-host': "currency-exchange.p.rapidapi.com",
-        'x-rapidapi-key': "api-id"
+        'x-rapidapi-key': "789d22491amsh9cf6fe5ac3b3cf8p195e80jsn0b807e6d418c"
         }
         response = requests.request("GET", url, headers=headers, params=querystring)
-        print(response.text)
+        print(f"Coverting {quantity} {initial} to {to} is {response.text}")
+        time.sleep(2)

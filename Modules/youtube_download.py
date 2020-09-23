@@ -1,4 +1,5 @@
 import os
+import time
 
 class downloader:
 
@@ -10,6 +11,7 @@ class downloader:
     def audio_download(self):
         link  = f"youtube-dl -i --extract-audio --audio-format {self.resolution}  --audio-quality 0 -o '{self.location}/%(title)s.%(ext)s' {self.url}"
         os.system(link)
+        time.sleep(2)
 
     def vedio_download(self):
         #os.system("export PATH=/media/mohan/Study\ and\ Softwares/pykit-master:$PATH")
@@ -17,3 +19,4 @@ class downloader:
         print(self.resolution,self.location)
         link = f"youtube-dl -o '{self.location}/%(title)s.%(ext)s' -f 'bestvideo[height<={self.resolution}]+bestaudio/best[height<={self.resolution}]' {self.url}"
         os.system(link)
+        time.sleep(2)
